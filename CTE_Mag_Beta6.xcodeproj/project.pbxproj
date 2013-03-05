@@ -29,6 +29,14 @@
 		A157DB4016E50F55008626C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A157DB0D16E50F55008626C6 /* Foundation.framework */; };
 		A157DB4816E50F55008626C6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A157DB4616E50F55008626C6 /* InfoPlist.strings */; };
 		A157DB4B16E50F55008626C6 /* CTE_Mag_Beta6Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = A157DB4A16E50F55008626C6 /* CTE_Mag_Beta6Tests.m */; };
+		A157DB5716E5104B008626C6 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A157DB5516E5104B008626C6 /* NavigationViewController.m */; };
+		A157DB5816E5104B008626C6 /* NavigationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A157DB5616E5104B008626C6 /* NavigationViewController.xib */; };
+		A157DB5C16E5107D008626C6 /* NavDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A157DB5A16E5107D008626C6 /* NavDetailViewController.m */; };
+		A157DB5D16E5107D008626C6 /* NavDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A157DB5B16E5107D008626C6 /* NavDetailViewController.xib */; };
+		A157DB6216E55417008626C6 /* static_xml.xml in Resources */ = {isa = PBXBuildFile; fileRef = A157DB6116E55417008626C6 /* static_xml.xml */; };
+		A157DB6616E554AA008626C6 /* ArticleList.m in Sources */ = {isa = PBXBuildFile; fileRef = A157DB6516E554AA008626C6 /* ArticleList.m */; };
+		A157DB6916E555CF008626C6 /* articleParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A157DB6816E555CF008626C6 /* articleParser.m */; };
+		A157DB6B16E56AE4008626C6 /* articles.xml in Resources */ = {isa = PBXBuildFile; fileRef = A157DB6A16E56AE4008626C6 /* articles.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +79,18 @@
 		A157DB4716E50F55008626C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A157DB4916E50F55008626C6 /* CTE_Mag_Beta6Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTE_Mag_Beta6Tests.h; sourceTree = "<group>"; };
 		A157DB4A16E50F55008626C6 /* CTE_Mag_Beta6Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTE_Mag_Beta6Tests.m; sourceTree = "<group>"; };
+		A157DB5416E5104B008626C6 /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
+		A157DB5516E5104B008626C6 /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
+		A157DB5616E5104B008626C6 /* NavigationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationViewController.xib; sourceTree = "<group>"; };
+		A157DB5916E5107D008626C6 /* NavDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavDetailViewController.h; sourceTree = "<group>"; };
+		A157DB5A16E5107D008626C6 /* NavDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavDetailViewController.m; sourceTree = "<group>"; };
+		A157DB5B16E5107D008626C6 /* NavDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavDetailViewController.xib; sourceTree = "<group>"; };
+		A157DB6116E55417008626C6 /* static_xml.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = static_xml.xml; path = ../../../../../../Desktop/static_xml.xml; sourceTree = "<group>"; };
+		A157DB6416E554AA008626C6 /* ArticleList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleList.h; sourceTree = "<group>"; };
+		A157DB6516E554AA008626C6 /* ArticleList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleList.m; sourceTree = "<group>"; };
+		A157DB6716E555CF008626C6 /* articleParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = articleParser.h; sourceTree = "<group>"; };
+		A157DB6816E555CF008626C6 /* articleParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = articleParser.m; sourceTree = "<group>"; };
+		A157DB6A16E56AE4008626C6 /* articles.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = articles.xml; path = ../../../../../../Desktop/articles.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +120,8 @@
 		A157DAFF16E50F55008626C6 = {
 			isa = PBXGroup;
 			children = (
+				A157DB6116E55417008626C6 /* static_xml.xml */,
+				A157DB6A16E56AE4008626C6 /* articles.xml */,
 				A157DB1116E50F55008626C6 /* CTE_Mag_Beta6 */,
 				A157DB4316E50F55008626C6 /* CTE_Mag_Beta6Tests */,
 				A157DB0A16E50F55008626C6 /* Frameworks */,
@@ -132,17 +154,14 @@
 			children = (
 				A157DB1A16E50F55008626C6 /* AppDelegate.h */,
 				A157DB1B16E50F55008626C6 /* AppDelegate.m */,
-				A157DB2316E50F55008626C6 /* FirstViewController.h */,
-				A157DB2416E50F55008626C6 /* FirstViewController.m */,
-				A157DB2616E50F55008626C6 /* first.png */,
-				A157DB2816E50F55008626C6 /* first@2x.png */,
-				A157DB2A16E50F55008626C6 /* SecondViewController.h */,
-				A157DB2B16E50F55008626C6 /* SecondViewController.m */,
-				A157DB2D16E50F55008626C6 /* second.png */,
-				A157DB2F16E50F55008626C6 /* second@2x.png */,
+				A157DB5E16E55196008626C6 /* ViewControllers */,
 				A157DB3116E50F55008626C6 /* FirstViewController.xib */,
 				A157DB3416E50F55008626C6 /* SecondViewController.xib */,
+				A157DB5616E5104B008626C6 /* NavigationViewController.xib */,
+				A157DB5B16E5107D008626C6 /* NavDetailViewController.xib */,
+				A157DB6316E55431008626C6 /* Article Parser */,
 				A157DB1216E50F55008626C6 /* Supporting Files */,
+				A157DB6016E551DE008626C6 /* Image Files */,
 			);
 			path = CTE_Mag_Beta6;
 			sourceTree = "<group>";
@@ -178,6 +197,51 @@
 				A157DB4616E50F55008626C6 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A157DB5E16E55196008626C6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A157DB2416E50F55008626C6 /* FirstViewController.m */,
+				A157DB2316E50F55008626C6 /* FirstViewController.h */,
+				A157DB2A16E50F55008626C6 /* SecondViewController.h */,
+				A157DB2B16E50F55008626C6 /* SecondViewController.m */,
+				A157DB5416E5104B008626C6 /* NavigationViewController.h */,
+				A157DB5516E5104B008626C6 /* NavigationViewController.m */,
+				A157DB5F16E551B6008626C6 /* Detail View */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A157DB5F16E551B6008626C6 /* Detail View */ = {
+			isa = PBXGroup;
+			children = (
+				A157DB5916E5107D008626C6 /* NavDetailViewController.h */,
+				A157DB5A16E5107D008626C6 /* NavDetailViewController.m */,
+			);
+			name = "Detail View";
+			sourceTree = "<group>";
+		};
+		A157DB6016E551DE008626C6 /* Image Files */ = {
+			isa = PBXGroup;
+			children = (
+				A157DB2616E50F55008626C6 /* first.png */,
+				A157DB2816E50F55008626C6 /* first@2x.png */,
+				A157DB2D16E50F55008626C6 /* second.png */,
+				A157DB2F16E50F55008626C6 /* second@2x.png */,
+			);
+			name = "Image Files";
+			sourceTree = "<group>";
+		};
+		A157DB6316E55431008626C6 /* Article Parser */ = {
+			isa = PBXGroup;
+			children = (
+				A157DB6416E554AA008626C6 /* ArticleList.h */,
+				A157DB6516E554AA008626C6 /* ArticleList.m */,
+				A157DB6716E555CF008626C6 /* articleParser.h */,
+				A157DB6816E555CF008626C6 /* articleParser.m */,
+			);
+			name = "Article Parser";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +325,10 @@
 				A157DB3016E50F55008626C6 /* second@2x.png in Resources */,
 				A157DB3316E50F55008626C6 /* FirstViewController.xib in Resources */,
 				A157DB3616E50F55008626C6 /* SecondViewController.xib in Resources */,
+				A157DB5816E5104B008626C6 /* NavigationViewController.xib in Resources */,
+				A157DB5D16E5107D008626C6 /* NavDetailViewController.xib in Resources */,
+				A157DB6216E55417008626C6 /* static_xml.xml in Resources */,
+				A157DB6B16E56AE4008626C6 /* articles.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +367,10 @@
 				A157DB1C16E50F55008626C6 /* AppDelegate.m in Sources */,
 				A157DB2516E50F55008626C6 /* FirstViewController.m in Sources */,
 				A157DB2C16E50F55008626C6 /* SecondViewController.m in Sources */,
+				A157DB5716E5104B008626C6 /* NavigationViewController.m in Sources */,
+				A157DB5C16E5107D008626C6 /* NavDetailViewController.m in Sources */,
+				A157DB6616E554AA008626C6 /* ArticleList.m in Sources */,
+				A157DB6916E555CF008626C6 /* articleParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +559,7 @@
 				A157DB5016E50F55008626C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A157DB5116E50F55008626C6 /* Build configuration list for PBXNativeTarget "CTE_Mag_Beta6Tests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +568,7 @@
 				A157DB5316E50F55008626C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -12,16 +12,52 @@
 
 #import "SecondViewController.h"
 
+#import "NavigationViewController.h"
+
+#import "articleParser.h"
+
 @implementation AppDelegate
+@synthesize articlelistArray;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSURL *url = [[NSURL alloc] initWithString:@"http://nst.us.to/AppSupport/articles.xml"];
+    
+    NSData *data = [[NSData alloc] initWithContentsOfURL:url];
+    
+    NSXMLParser *articlexmlParser = [[NSXMLParser alloc] initWithData:data];
+    
+    articleParser *thearticleparser = [[articleParser alloc] initarticleParser];
+    
+    [articlexmlParser setDelegate:thearticleparser];
+    
+    BOOL worked = [articlexmlParser parse];
+    
+    if (worked) {
+        NSLog(@"Amount %i", [articlelistArray count]);
+    }
+    else {
+        NSLog(@"boo");
+    }
+    
+    
+    
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    
     // Override point for customization after application launch.
     UIViewController *viewController1 = [[FirstViewController alloc] initWithNibName:@"FirstViewController" bundle:nil];
     UIViewController *viewController2 = [[SecondViewController alloc] initWithNibName:@"SecondViewController" bundle:nil];
+    
+    //Create NavigationViewController object
+    NavigationViewController *navController = [[NavigationViewController alloc] initWithNibName:@"NavigationViewController" bundle:nil];
+    
+    //Create UINavigation Controller
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:navController];
+    
     self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = @[viewController1, viewController2];
+    self.tabBarController.viewControllers = @[viewController1, viewController2,nav];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     return YES;

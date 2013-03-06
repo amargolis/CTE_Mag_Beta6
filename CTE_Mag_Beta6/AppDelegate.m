@@ -14,33 +14,21 @@
 
 #import "NavigationViewController.h"
 
+#import "SecondNavigationViewController.h"
+
 #import "articleParser.h"
+
+#import "headlineParser.h"
 
 @implementation AppDelegate
 @synthesize articlelistArray;
+@synthesize headlineslistArray;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    NSURL *url = [[NSURL alloc] initWithString:@"http://nst.us.to/AppSupport/articles.xml"];
-    
-    NSData *data = [[NSData alloc] initWithContentsOfURL:url];
-    
-    NSXMLParser *articlexmlParser = [[NSXMLParser alloc] initWithData:data];
-    
     articleParser *thearticleparser = [[articleParser alloc] initarticleParser];
     
-    [articlexmlParser setDelegate:thearticleparser];
-    
-    BOOL worked = [articlexmlParser parse];
-    
-    if (worked) {
-        NSLog(@"Amount %i", [articlelistArray count]);
-    }
-    else {
-        NSLog(@"boo");
-    }
-    
-    
+    headlineParser *theheadlineparser = [[headlineParser alloc] initheadlineParser];
     
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -52,12 +40,14 @@
     
     //Create NavigationViewController object
     NavigationViewController *navController = [[NavigationViewController alloc] initWithNibName:@"NavigationViewController" bundle:nil];
+    SecondNavigationViewController *secondnavController = [[SecondNavigationViewController alloc] initWithNibName:@"SecondNavigationViewController" bundle:nil];
     
     //Create UINavigation Controller
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:navController];
+    UINavigationController *secondnav = [[UINavigationController alloc] initWithRootViewController:secondnavController];
     
     self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = @[viewController1, viewController2,nav];
+    self.tabBarController.viewControllers = @[viewController1, viewController2, nav, secondnav];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     return YES;

@@ -1,30 +1,28 @@
 //
-//  NavigationViewController.m
+//  SecondNavigationViewController.m
 //  CTE_Mag_Beta6
 //
 //  Created by Andy Margolis on 3/4/13.
 //  Copyright (c) 2013 Northshore Technology Services. All rights reserved.
 //
 
-#import "NavigationViewController.h"
+#import "SecondNavigationViewController.h"
 
-#import "NavDetailViewController.h"
+#import "SecondNavDetailViewController.h"
 
-#import "articleParser.h"
+#import "headlineParser.h"
 
-
-@interface NavigationViewController ()
+@interface SecondNavigationViewController ()
 
 @end
 
-@implementation NavigationViewController
+@implementation SecondNavigationViewController
 
 //@synthesize app;
 
-@synthesize articlelistArray;
+@synthesize headlineslistArray;
 
-@synthesize artList;
-
+@synthesize headList;
 
 #pragma mark - View Life Cycle Methods
 
@@ -33,48 +31,49 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.title = @"Articles";
+        self.title = @"Headlines";
         // Custom Tab Image
         self.tabBarItem.image = [UIImage imageNamed:@"first"];
     }
     return self;
 }
 
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+
     
-    NSURL *url = [[NSURL alloc] initWithString:@"http://nst.us.to/AppSupport/articles.xml"];
+    NSURL *url = [[NSURL alloc] initWithString:@"http://nst.us.to/AppSupport/headlines.xml"];
     
     NSData *data = [[NSData alloc] initWithContentsOfURL:url];
     
-    NSXMLParser *articlexmlParser = [[NSXMLParser alloc] initWithData:data];
+    NSXMLParser *headlinexmlParser = [[NSXMLParser alloc] initWithData:data];
     
     ///removed below, moved to appdelegate
-    ////articleParser *thearticleparser = [[articleParser alloc] initarticleParser];
+    ////headlineParser *theheadlineparser = [[headlineParser alloc] initheadlineParser];
     
-    [articlexmlParser setDelegate:self];
+    [headlinexmlParser setDelegate:self];
     
-    //changed setDelegate from thearticleparser to self, change back if issues
-    
-    BOOL worked = [articlexmlParser parse];
+    BOOL worked = [headlinexmlParser parse];
     
     if (worked) {
-        NSLog(@"Amount %i", [articlelistArray count]);
+        NSLog(@"Amount %i", [headlineslistArray count]);
     }
     else {
         NSLog(@"boo");
         
     }
     
-        
+    
     [self.tableView reloadData];
+    
     
 }
 
 #pragma mark - Table View Methods
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -83,7 +82,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    return [app.articlelistArray count];
+    return [app.headlineslistArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -102,10 +101,10 @@
     }
     
     AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    artList = [app.articlelistArray objectAtIndex:indexPath.row];
+    headList = [app.headlineslistArray objectAtIndex:indexPath.row];
     
-    //Set the text attribute to whatever we are currently looking at in our array    
-    cell.textLabel.text = artList.ARTICLE_TITLE;
+    //Set the text attribute to whatever we are currently looking at in our array
+    cell.textLabel.text = headList.content;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.textLabel.font = [UIFont fontWithName:@"Optima" size:17];
     cell.textLabel.numberOfLines = 2;
@@ -116,17 +115,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    NavDetailViewController *NDVC = [[NavDetailViewController alloc] init];
+    SecondNavDetailViewController *SNDVC = [[SecondNavDetailViewController alloc] init];
     
     AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    headList = [app.headlineslistArray objectAtIndex:indexPath.row];
     
-    artList = [app.articlelistArray objectAtIndex:indexPath.row];
-    
-    NDVC.artList = artList;
+    SNDVC.headList = headList;
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    [self.navigationController pushViewController:NDVC animated:YES];
+    [self.navigationController pushViewController:SNDVC animated:YES];
     
 }
 

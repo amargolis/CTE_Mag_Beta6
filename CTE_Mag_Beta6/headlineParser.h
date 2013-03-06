@@ -1,5 +1,5 @@
 //
-//  articleParser.h
+//  headlineParser.h
 //  CTE_Mag_Beta6
 //
 //  Created by Andy Margolis on 3/4/13.
@@ -8,17 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import "AppDelegate.h"
-#import "ArticleList.h"
-#import "NavigationViewController.h"
+#import "HeadlinesList.h"
+#import "SecondNavigationViewController.h"
 
-@interface articleParser : NSObject <NSXMLParserDelegate> {
+@interface headlineParser : NSObject <NSXMLParserDelegate> {
     
     AppDelegate *app;
-    ArticleList *artList;
+    HeadlinesList *headList;
     NSMutableString *currentElementValue;
     
 }
 
--(id)initarticleParser;
+-(id)initheadlineParser;
 
 @end

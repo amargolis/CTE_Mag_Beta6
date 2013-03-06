@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A157DB0716E50F55008626C6"
-               BuildableName = "CTE_Mag_Beta6.app"
-               BlueprintName = "CTE_Mag_Beta6"
+               BuildableName = "CTE Plus.app"
+               BlueprintName = "CTE Plus"
                ReferencedContainer = "container:CTE_Mag_Beta6.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -43,8 +43,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A157DB0716E50F55008626C6"
-            BuildableName = "CTE_Mag_Beta6.app"
-            BlueprintName = "CTE_Mag_Beta6"
+            BuildableName = "CTE Plus.app"
+            BlueprintName = "CTE Plus"
             ReferencedContainer = "container:CTE_Mag_Beta6.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A157DB0716E50F55008626C6"
-            BuildableName = "CTE_Mag_Beta6.app"
-            BlueprintName = "CTE_Mag_Beta6"
+            BuildableName = "CTE Plus.app"
+            BlueprintName = "CTE Plus"
             ReferencedContainer = "container:CTE_Mag_Beta6.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -80,8 +80,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A157DB0716E50F55008626C6"
-            BuildableName = "CTE_Mag_Beta6.app"
-            BlueprintName = "CTE_Mag_Beta6"
+            BuildableName = "CTE Plus.app"
+            BlueprintName = "CTE Plus"
             ReferencedContainer = "container:CTE_Mag_Beta6.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

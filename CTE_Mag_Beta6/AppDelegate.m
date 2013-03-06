@@ -28,6 +28,7 @@
 {
     articleParser *thearticleparser = [[articleParser alloc] initarticleParser];
     
+    
     headlineParser *theheadlineparser = [[headlineParser alloc] initheadlineParser];
     
     

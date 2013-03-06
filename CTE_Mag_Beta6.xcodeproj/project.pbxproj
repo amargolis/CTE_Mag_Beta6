@@ -39,10 +39,8 @@
 		A157DB5816E5104B008626C6 /* NavigationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A157DB5616E5104B008626C6 /* NavigationViewController.xib */; };
 		A157DB5C16E5107D008626C6 /* NavDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A157DB5A16E5107D008626C6 /* NavDetailViewController.m */; };
 		A157DB5D16E5107D008626C6 /* NavDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A157DB5B16E5107D008626C6 /* NavDetailViewController.xib */; };
-		A157DB6216E55417008626C6 /* static_xml.xml in Resources */ = {isa = PBXBuildFile; fileRef = A157DB6116E55417008626C6 /* static_xml.xml */; };
 		A157DB6616E554AA008626C6 /* ArticleList.m in Sources */ = {isa = PBXBuildFile; fileRef = A157DB6516E554AA008626C6 /* ArticleList.m */; };
 		A157DB6916E555CF008626C6 /* articleParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A157DB6816E555CF008626C6 /* articleParser.m */; };
-		A157DB6B16E56AE4008626C6 /* articles.xml in Resources */ = {isa = PBXBuildFile; fileRef = A157DB6A16E56AE4008626C6 /* articles.xml */; };
 		A1C1283816E5BD9700036790 /* 5launch.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C1283316E5BD9700036790 /* 5launch.png */; };
 		A1C1283916E5BD9700036790 /* iphone_original.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C1283416E5BD9700036790 /* iphone_original.png */; };
 		A1C1283A16E5BD9700036790 /* retina 4.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C1283516E5BD9700036790 /* retina 4.png */; };
@@ -110,12 +108,10 @@
 		A157DB5916E5107D008626C6 /* NavDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavDetailViewController.h; sourceTree = "<group>"; };
 		A157DB5A16E5107D008626C6 /* NavDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavDetailViewController.m; sourceTree = "<group>"; };
 		A157DB5B16E5107D008626C6 /* NavDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavDetailViewController.xib; sourceTree = "<group>"; };
-		A157DB6116E55417008626C6 /* static_xml.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = static_xml.xml; path = ../../../../../../Desktop/static_xml.xml; sourceTree = "<group>"; };
 		A157DB6416E554AA008626C6 /* ArticleList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleList.h; sourceTree = "<group>"; };
 		A157DB6516E554AA008626C6 /* ArticleList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleList.m; sourceTree = "<group>"; };
 		A157DB6716E555CF008626C6 /* articleParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = articleParser.h; sourceTree = "<group>"; };
 		A157DB6816E555CF008626C6 /* articleParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = articleParser.m; sourceTree = "<group>"; };
-		A157DB6A16E56AE4008626C6 /* articles.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = articles.xml; path = ../../../../../../Desktop/articles.xml; sourceTree = "<group>"; };
 		A1C1283316E5BD9700036790 /* 5launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5launch.png; sourceTree = "<group>"; };
 		A1C1283416E5BD9700036790 /* iphone_original.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone_original.png; sourceTree = "<group>"; };
 		A1C1283516E5BD9700036790 /* retina 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "retina 4.png"; sourceTree = "<group>"; };
@@ -169,8 +165,6 @@
 				A1C1284316E5BDF500036790 /* revised_bitch_ass_icon.png */,
 				A1C1284116E5BDD000036790 /* Default@2x.png */,
 				A1C1283F16E5BDC900036790 /* Default-568h@2x.png */,
-				A157DB6116E55417008626C6 /* static_xml.xml */,
-				A157DB6A16E56AE4008626C6 /* articles.xml */,
 				A1C1283216E5BD9700036790 /* graphics */,
 				A157DB1116E50F55008626C6 /* CTE_Mag_Beta6 */,
 				A157DB4316E50F55008626C6 /* CTE_Mag_Beta6Tests */,
@@ -397,8 +391,6 @@
 				A157DB3616E50F55008626C6 /* SecondViewController.xib in Resources */,
 				A157DB5816E5104B008626C6 /* NavigationViewController.xib in Resources */,
 				A157DB5D16E5107D008626C6 /* NavDetailViewController.xib in Resources */,
-				A157DB6216E55417008626C6 /* static_xml.xml in Resources */,
-				A157DB6B16E56AE4008626C6 /* articles.xml in Resources */,
 				A10507AE16E597A60029B3F4 /* SecondNavigationViewController.xib in Resources */,
 				A10507B316E597DC0029B3F4 /* SecondNavDetailViewController.xib in Resources */,
 				A1C1283816E5BD9700036790 /* 5launch.png in Resources */,

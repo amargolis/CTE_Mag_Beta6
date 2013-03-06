@@ -44,10 +44,6 @@
 		A1C1283816E5BD9700036790 /* 5launch.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C1283316E5BD9700036790 /* 5launch.png */; };
 		A1C1283916E5BD9700036790 /* iphone_original.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C1283416E5BD9700036790 /* iphone_original.png */; };
 		A1C1283A16E5BD9700036790 /* retina 4.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C1283516E5BD9700036790 /* retina 4.png */; };
-		A1C1283B16E5BD9700036790 /* revised_bitch_ass_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C1283616E5BD9700036790 /* revised_bitch_ass_icon.png */; };
-		A1C1283C16E5BD9700036790 /* revised_icon_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C1283716E5BD9700036790 /* revised_icon_retina.png */; };
-		A1C1284016E5BDC900036790 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C1283F16E5BDC900036790 /* Default-568h@2x.png */; };
-		A1C1284216E5BDD000036790 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C1284116E5BDD000036790 /* Default@2x.png */; };
 		A1C1284416E5BDF500036790 /* revised_bitch_ass_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C1284316E5BDF500036790 /* revised_bitch_ass_icon.png */; };
 		A1C1284616E5BDFB00036790 /* revised_icon_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C1284516E5BDFB00036790 /* revised_icon_retina.png */; };
 /* End PBXBuildFile section */
@@ -396,10 +392,6 @@
 				A1C1283816E5BD9700036790 /* 5launch.png in Resources */,
 				A1C1283916E5BD9700036790 /* iphone_original.png in Resources */,
 				A1C1283A16E5BD9700036790 /* retina 4.png in Resources */,
-				A1C1283B16E5BD9700036790 /* revised_bitch_ass_icon.png in Resources */,
-				A1C1283C16E5BD9700036790 /* revised_icon_retina.png in Resources */,
-				A1C1284016E5BDC900036790 /* Default-568h@2x.png in Resources */,
-				A1C1284216E5BDD000036790 /* Default@2x.png in Resources */,
 				A1C1284416E5BDF500036790 /* revised_bitch_ass_icon.png in Resources */,
 				A1C1284616E5BDFB00036790 /* revised_icon_retina.png in Resources */,
 			);

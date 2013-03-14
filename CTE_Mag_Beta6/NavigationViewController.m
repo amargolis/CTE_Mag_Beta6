@@ -12,6 +12,8 @@
 
 #import "articleParser.h"
 
+#import "ArticleList.h"
+
 
 @interface NavigationViewController ()
 
@@ -25,7 +27,6 @@
 
 @synthesize artList;
 
-
 #pragma mark - View Life Cycle Methods
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -38,38 +39,40 @@
         self.tabBarItem.image = [UIImage imageNamed:@"first"];
     }
     return self;
+    //moved from under boolean. move back if needed. 
+    [self.tableView reloadData];
 }
 
 - (void)viewDidLoad
+
 {
     [super viewDidLoad];
     
-    
+    self.navigationController.navigationBar.barStyle=UIBarStyleBlack;
+
     NSURL *url = [[NSURL alloc] initWithString:@"http://nst.us.to/AppSupport/articles.xml"];
     
     NSData *data = [[NSData alloc] initWithContentsOfURL:url];
     
     NSXMLParser *articlexmlParser = [[NSXMLParser alloc] initWithData:data];
     
-    ///removed below, moved to appdelegate
-    ////articleParser *thearticleparser = [[articleParser alloc] initarticleParser];
+    articleParser *thearticleparser = [[articleParser alloc] initarticleParser];
     
-    [articlexmlParser setDelegate:self];
+    [articlexmlParser setDelegate:thearticleparser];
     
-    //changed setDelegate from thearticleparser to self, change back if issues
+    //changed setDelegate to thearticleparser from self, change back if issues
     
     BOOL worked = [articlexmlParser parse];
     
     if (worked) {
         NSLog(@"Amount %i", [articlelistArray count]);
+        NSMutableArray *articless = [thearticleparser articless];
     }
     else {
         NSLog(@"boo");
         
     }
     
-        
-    [self.tableView reloadData];
     
 }
 

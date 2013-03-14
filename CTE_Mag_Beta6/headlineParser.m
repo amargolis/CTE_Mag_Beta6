@@ -7,18 +7,24 @@
 //
 
 #import "headlineParser.h"
-
+#import "HeadlinesList.h"
+@class headlineParser;
 @implementation headlineParser
+//added two synthesize values as well as import articleList.h
+@synthesize headList;
+@synthesize headliness;
 
--(id) initheadlineParser {
+//-(id) initheadlineParser {
     
-    if (self == [super init]) {
-        
-        app = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-        
-    }
+    //if (self == [super init]) {
+-(headlineParser *) initheadlineParser; {
+    [super init];
+    headliness = [[NSMutableArray alloc] init];
+    app = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     return self;
 }
+
+
 
 -(void) parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{
     

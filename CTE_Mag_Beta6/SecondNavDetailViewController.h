@@ -10,7 +10,7 @@
 #import "HeadlinesList.h"
 @interface SecondNavDetailViewController : UIViewController{
     
-    //link xml elements to labels in NavDetailViewController
+    //link xml elements to labels in SecondNavDetailViewController
     IBOutlet UILabel *id;
     IBOutlet UILabel *content;
     IBOutlet UILabel *dateadded;

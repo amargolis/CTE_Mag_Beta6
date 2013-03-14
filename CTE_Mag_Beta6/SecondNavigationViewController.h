@@ -14,9 +14,9 @@
 <UITableViewDataSource, UITableViewDelegate, NSXMLParserDelegate>
 
 //@property (nonatomic, retain) AppDelegate *app;
-@property (strong, nonatomic) NSMutableArray *headlineslistArray;
 @property (nonatomic, retain) HeadlinesList *headList;
-@property (strong, nonatomic) IBOutlet UIView *view;
+@property (strong, nonatomic) NSMutableArray *headlineslistArray;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UIView *view;
 
 @end

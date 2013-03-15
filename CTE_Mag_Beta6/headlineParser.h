@@ -11,21 +11,14 @@
 #import "HeadlinesList.h"
 #import "SecondNavigationViewController.h"
 
-@class headlineParser;
 @interface headlineParser : NSObject <NSXMLParserDelegate> {
     
-    NSMutableString *currentElementValue;
-    HeadlinesList *headList;
     AppDelegate *app;
-    NSMutableArray *headliness;
+    HeadlinesList *headList;
+    NSMutableString *currentElementValue;
     
 }
 
-@property (nonatomic, retain) HeadlinesList *headList;
-@property (nonatomic, retain) NSMutableArray *headliness;
-
--(headlineParser *) initheadlineParser;
-//remove if working, re implement if not working and delete above.
-//-(id)initheadlineParser;
+-(id)initheadlineParser;
 
 @end

@@ -39,7 +39,6 @@
     UIViewController *viewController1 = [[FirstViewController alloc] initWithNibName:@"FirstViewController" bundle:nil];
     UIViewController *viewController2 = [[SecondViewController alloc] initWithNibName:@"SecondViewController" bundle:nil];
     
-    
     //Create NavigationViewController object
     NavigationViewController *navController = [[NavigationViewController alloc] initWithNibName:@"NavigationViewController" bundle:nil];
     SecondNavigationViewController *secondnavController = [[SecondNavigationViewController alloc] initWithNibName:@"SecondNavigationViewController" bundle:nil];
@@ -49,7 +48,7 @@
     UINavigationController *secondnav = [[UINavigationController alloc] initWithRootViewController:secondnavController];
     
     self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = @[nav, secondnav, viewController1, viewController2];
+    self.tabBarController.viewControllers = @[viewController1, viewController2, nav, secondnav];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     return YES;

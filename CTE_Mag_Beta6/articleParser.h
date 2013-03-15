@@ -11,21 +11,14 @@
 #import "ArticleList.h"
 #import "NavigationViewController.h"
 
-@class articleParser;
 @interface articleParser : NSObject <NSXMLParserDelegate> {
     
-    NSMutableString *currentElementValue;
-    ArticleList *artList;
     AppDelegate *app;
-    NSMutableArray *articless;
+    ArticleList *artList;
+    NSMutableString *currentElementValue;
     
 }
 
-@property (nonatomic, retain) ArticleList *artList;
-@property (nonatomic, retain) NSMutableArray *articless;
-
--(articleParser *) initarticleParser;
-//remove if working, re implement if not working and delete above.
-//-(id)initarticleParser;
+-(id)initarticleParser;
 
 @end

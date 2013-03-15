@@ -7,24 +7,18 @@
 //
 
 #import "articleParser.h"
-#import "ArticleList.h"
-@class articleParser;
-@implementation articleParser
-//added two synthesize values as well as import articleList.h
-@synthesize artList;
-@synthesize articless;
 
-//-(id) initarticleParser {
+@implementation articleParser
+
+-(id) initarticleParser {
     
-    //if (self == [super init]) {
--(articleParser *) initarticleParser {
-    [super init];
-    articless = [[NSMutableArray alloc] init];
-    app = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    if (self == [super init]) {
+        
+        app = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+        
+    }
     return self;
 }
-    
-
 
 -(void) parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{
     

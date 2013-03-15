@@ -12,11 +12,6 @@
 
 #import "headlineParser.h"
 
-#import "HeadlinesList.h"
-
-#import "SVWebViewController.h"
-
-
 @interface SecondNavigationViewController ()
 
 @end
@@ -41,34 +36,31 @@
         self.tabBarItem.image = [UIImage imageNamed:@"first"];
     }
     return self;
-    //moved from under boolean. move back if needed.
-    [self.tableView reloadData];
 }
 
-- (void)viewDidLoad
 
+
+- (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.navigationController.navigationBar.barStyle=UIBarStyleBlack;
 
+    
     NSURL *url = [[NSURL alloc] initWithString:@"http://nst.us.to/AppSupport/headlines.xml"];
     
     NSData *data = [[NSData alloc] initWithContentsOfURL:url];
     
     NSXMLParser *headlinexmlParser = [[NSXMLParser alloc] initWithData:data];
     
-    headlineParser *theheadlineparser = [[headlineParser alloc] initheadlineParser];
+    ///removed below, moved to appdelegate
+    ////headlineParser *theheadlineparser = [[headlineParser alloc] initheadlineParser];
     
-    [headlinexmlParser setDelegate:theheadlineparser];
-    
-    //changed setDelegate to thearticleparser from self, change back if issues
+    [headlinexmlParser setDelegate:self];
     
     BOOL worked = [headlinexmlParser parse];
     
     if (worked) {
         NSLog(@"Amount %i", [headlineslistArray count]);
-        NSMutableArray *headliness = [theheadlineparser headliness];
     }
     else {
         NSLog(@"boo");
@@ -76,10 +68,12 @@
     }
     
     
+    [self.tableView reloadData];
+    
+    
 }
 
 #pragma mark - Table View Methods
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -121,25 +115,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    
-    NSURL *URL = [NSURL URLWithString:headList.url];
-    //NSURL *URL = [NSURL URLWithString:@"http://en.wikipedia.org/wiki/Friday_(Rebecca_Black_song)"];
-    
-	SVWebViewController *webViewController = [[SVWebViewController alloc] initWithURL:URL];
-    
-	[self.navigationController pushViewController:webViewController animated:YES];
-    
-    //SecondNavDetailViewController *SNDVC = [[SecondNavDetailViewController alloc] init];
+    SecondNavDetailViewController *SNDVC = [[SecondNavDetailViewController alloc] init];
     
     AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     headList = [app.headlineslistArray objectAtIndex:indexPath.row];
     
-    //SVWebViewController.headList = headList;
+    SNDVC.headList = headList;
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    
-    
+    [self.navigationController pushViewController:SNDVC animated:YES];
     
 }
 

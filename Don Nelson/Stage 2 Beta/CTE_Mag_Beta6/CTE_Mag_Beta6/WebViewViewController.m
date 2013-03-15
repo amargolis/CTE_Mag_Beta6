@@ -1,25 +1,25 @@
 //
-//  FirstViewController.m
+//  WebViewViewController.m
 //  CTE_Mag_Beta6
 //
 //  Created by Andy Margolis on 3/4/13.
 //  Copyright (c) 2013 Northshore Technology Services. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "WebViewViewController.h"
+#import "NavDetailViewController.h"
 
-@interface FirstViewController ()
+@interface WebViewViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation WebViewViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = NSLocalizedString(@"Videos", @"Videos");
-        self.tabBarItem.image = [UIImage imageNamed:@"first"];
+        // Custom initialization
     }
     return self;
 }
@@ -27,7 +27,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view from its nib.
+    
+    NSString *urlAddress = @"http://www.ctemag.com/";
+    urlAddress = [urlAddress stringByAppendingString:@"STATIC_WEBPAGE"];
+    
+    
+    
+    NSURL *url = [NSURL URLWithString:urlAddress];
 }
 
 - (void)didReceiveMemoryWarning

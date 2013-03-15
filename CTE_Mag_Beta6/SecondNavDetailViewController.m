@@ -14,8 +14,6 @@
 
 @implementation SecondNavDetailViewController
 
-@synthesize headList;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -28,18 +26,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    content.text = headList.content;
-    
-    dateadded.text = headList.dateadded;
-    
-    url.text = headList.url;
-    
-    //id.text = headList.id;
-    
-    content.numberOfLines = 0;
-    [content sizeToFit];
-    
+    // Do any additional setup after loading the view from its nib.
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 @end

@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface ArticleList : NSObject
-
 @property (nonatomic, retain) NSString *ARTICLE_TITLE;
 @property (nonatomic, retain) NSString *ARTICLE_AUTHOR;
 @property (nonatomic, retain) NSString *ARTICLE_DATE;

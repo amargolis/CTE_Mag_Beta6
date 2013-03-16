@@ -7,16 +7,19 @@
 //
 
 #import "articleParser.h"
-
+#import "ArticleList.h"
+@class articleParser;
 @implementation articleParser
+@synthesize artList;
+@synthesize articless;
 
--(id) initarticleParser {
-    
-    if (self == [super init]) {
-        
-        app = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-        
-    }
+//-(id) initarticleParser {
+
+    //if (self == [super init]) {
+-(articleParser *) initarticleParser {
+    [super init];
+    articless = [[NSMutableArray alloc] init];
+    app = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     return self;
 }
 

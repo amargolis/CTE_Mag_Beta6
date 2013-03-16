@@ -10,8 +10,10 @@
 #import "AppDelegate.h"
 #import "ArticleList.h"
 
+
 @interface NavigationViewController : UIViewController
 <UITableViewDataSource, UITableViewDelegate, NSXMLParserDelegate>
+
 
 //added NSXMLParserDelegate to above list in effort to get rid of undeclared identifier thearticleparser warning
 
@@ -21,4 +23,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UIView *view;
 
+
 @end
+

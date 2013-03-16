@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "ArticleList.h"
 @interface NavDetailViewController : UIViewController{
+    
+    
    
     //link xml elements to labels in NavDetailViewController
     IBOutlet UILabel *ARTICLE_TITLE;
@@ -21,5 +23,7 @@
 }
 
 @property (nonatomic, retain) ArticleList *artList;
+
+- (IBAction)presentWebViewController;
 
 @end

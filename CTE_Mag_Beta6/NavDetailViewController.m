@@ -8,6 +8,10 @@
 
 #import "NavDetailViewController.h"
 
+#import "SVWebViewController.h"
+
+#import "NavigationViewController.h"
+
 @interface NavDetailViewController ()
 @end
 
@@ -21,6 +25,17 @@
 
     }
     return self;
+}
+
+- (void)presentWebViewController {
+    NSString *urlString=
+    [NSString stringWithFormat:@"http://www.ctemag.com/aa_pages/2013/%@",[artList.STATIC_WEBPAGE stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+	NSURL *URL = [NSURL URLWithString:urlString];
+	SVModalWebViewController *webViewController = [[SVModalWebViewController alloc] initWithURL:URL];
+	webViewController.modalPresentationStyle = UIModalPresentationPageSheet;
+    webViewController.availableActions = SVWebViewControllerAvailableActionsOpenInSafari | SVWebViewControllerAvailableActionsOpenInChrome | SVWebViewControllerAvailableActionsCopyLink | SVWebViewControllerAvailableActionsMailLink;
+    [self presentViewController:webViewController animated:YES completion:nil];
+
 }
 
 - (void)viewDidLoad
@@ -48,6 +63,10 @@
     ARTICLE_DESCRIPTION.numberOfLines = 0;
     [ARTICLE_DESCRIPTION sizeToFit];
     
+    ARTICLE_AUTHOR.numberOfLines = 0;
+    [ARTICLE_AUTHOR sizeToFit];
+    
+
 }
 
 

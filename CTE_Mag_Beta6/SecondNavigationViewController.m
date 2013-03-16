@@ -12,6 +12,10 @@
 
 #import "headlineParser.h"
 
+#import "HeadlinesList.h"
+
+#import "SVWebViewController.h"
+
 @interface SecondNavigationViewController ()
 
 @end
@@ -33,7 +37,7 @@
         // Custom initialization
         self.title = @"Headlines";
         // Custom Tab Image
-        self.tabBarItem.image = [UIImage imageNamed:@"first"];
+        self.tabBarItem.image = [UIImage imageNamed:@"166-newspaper"];
     }
     return self;
 }
@@ -44,7 +48,9 @@
 {
     [super viewDidLoad];
     
-
+    self.tableView.rowHeight = 50;
+    
+    self.navigationController.navigationBar.barStyle=UIBarStyleBlack;
     
     NSURL *url = [[NSURL alloc] initWithString:@"http://nst.us.to/AppSupport/headlines.xml"];
     
@@ -54,13 +60,17 @@
     
     ///removed below, moved to appdelegate
     ////headlineParser *theheadlineparser = [[headlineParser alloc] initheadlineParser];
+    headlineParser *theheadlineparser = [[headlineParser alloc] initheadlineParser];
     
-    [headlinexmlParser setDelegate:self];
+    [headlinexmlParser setDelegate:theheadlineparser];
+    
+    //changed setDelegate to theheadlineparser from self, change back if issues
     
     BOOL worked = [headlinexmlParser parse];
     
     if (worked) {
         NSLog(@"Amount %i", [headlineslistArray count]);
+        NSMutableArray *headliness = [theheadlineparser headliness];
     }
     else {
         NSLog(@"boo");
@@ -106,7 +116,7 @@
     //Set the text attribute to whatever we are currently looking at in our array
     cell.textLabel.text = headList.content;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.textLabel.font = [UIFont fontWithName:@"Optima" size:17];
+    cell.textLabel.font = [UIFont fontWithName:@"Optima-Bold" size:17];
     cell.textLabel.numberOfLines = 2;
     
     //Return the cell
@@ -115,16 +125,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    SecondNavDetailViewController *SNDVC = [[SecondNavDetailViewController alloc] init];
+    NSURL *URL = [NSURL URLWithString:headList.url];
+    SVWebViewController *webViewController = [[SVWebViewController alloc] initWithURL:URL];
+    [self.navigationController pushViewController:webViewController animated:YES];
     
     AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     headList = [app.headlineslistArray objectAtIndex:indexPath.row];
     
-    SNDVC.headList = headList;
-    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    [self.navigationController pushViewController:SNDVC animated:YES];
     
 }
 

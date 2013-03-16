@@ -13,12 +13,18 @@
 
 @interface articleParser : NSObject <NSXMLParserDelegate> {
     
-    AppDelegate *app;
-    ArticleList *artList;
     NSMutableString *currentElementValue;
+    ArticleList *artList;
+    AppDelegate *app;
+    NSMutableArray *articless;
     
 }
 
--(id)initarticleParser;
+@property (nonatomic, retain) ArticleList *artList;
+@property (nonatomic, retain) NSMutableArray *articless;
+
+-(articleParser *) initarticleParser;
+//remove if working, reimpplement if not working and delete above
+//-(id)initarticleParser;
 
 @end

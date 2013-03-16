@@ -12,6 +12,8 @@
 
 #import "articleParser.h"
 
+#import "ArticleList.h"
+
 
 @interface NavigationViewController ()
 
@@ -35,7 +37,7 @@
         // Custom initialization
         self.title = @"Articles";
         // Custom Tab Image
-        self.tabBarItem.image = [UIImage imageNamed:@"first"];
+        self.tabBarItem.image = [UIImage imageNamed:@"162-receipt"];
     }
     return self;
 }
@@ -43,7 +45,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableView.rowHeight = 50;
+
     
+    self.navigationController.navigationBar.barStyle=UIBarStyleBlack;
     
     NSURL *url = [[NSURL alloc] initWithString:@"http://nst.us.to/AppSupport/articles.xml"];
     
@@ -53,15 +58,17 @@
     
     ///removed below, moved to appdelegate
     ////articleParser *thearticleparser = [[articleParser alloc] initarticleParser];
+    articleParser *thearticleparser = [[articleParser alloc] initarticleParser];
     
-    [articlexmlParser setDelegate:self];
+    [articlexmlParser setDelegate:thearticleparser];
     
-    //changed setDelegate from thearticleparser to self, change back if issues
+    //changed setDelegate to thearticleparser from self, change back if issues
     
     BOOL worked = [articlexmlParser parse];
     
     if (worked) {
         NSLog(@"Amount %i", [articlelistArray count]);
+        NSMutableArray *articless = [thearticleparser articless];
     }
     else {
         NSLog(@"boo");
@@ -80,6 +87,7 @@
     return 1;
 }
 
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -97,7 +105,7 @@
     
     //If there are no cells to be reused, create a new cell
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
@@ -106,9 +114,12 @@
     
     //Set the text attribute to whatever we are currently looking at in our array    
     cell.textLabel.text = artList.ARTICLE_TITLE;
+    cell.detailTextLabel.text = artList.ARTICLE_DATE;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.textLabel.font = [UIFont fontWithName:@"Optima" size:17];
+    cell.textLabel.font = [UIFont fontWithName:@"Optima-Bold" size:17];
+    cell.detailTextLabel.font = [UIFont fontWithName:@"Optima-Bold" size:10];
     cell.textLabel.numberOfLines = 2;
+    
     
     //Return the cell
     return cell;

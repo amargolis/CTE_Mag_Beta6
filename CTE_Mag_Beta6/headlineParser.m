@@ -7,16 +7,19 @@
 //
 
 #import "headlineParser.h"
-
+#import "HeadlinesList.h"
+@class headlineParser;
 @implementation headlineParser
+@synthesize headList;
+@synthesize headliness;
 
--(id) initheadlineParser {
-    
-    if (self == [super init]) {
-        
-        app = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-        
-    }
+//-(id) initheadlineParser {
+
+//if (self == [super init]) {
+-(headlineParser *) initheadlineParser {
+    [super init];
+    headliness = [[NSMutableArray alloc] init];
+    app = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     return self;
 }
 

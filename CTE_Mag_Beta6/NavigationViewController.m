@@ -45,12 +45,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.tableView.rowHeight = 50;
-
+    //self.tableView.rowHeight = 50;
     
+    UIImage *image = [UIImage imageNamed:@"CTEvector.png"];
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:image];
+
     self.navigationController.navigationBar.barStyle=UIBarStyleBlack;
     
-    NSURL *url = [[NSURL alloc] initWithString:@"http://nst.us.to/AppSupport/articles.xml"];
+    NSURL *url = [[NSURL alloc] initWithString:@"http://testserver.com/xml"];
     
     NSData *data = [[NSData alloc] initWithContentsOfURL:url];
     
@@ -71,12 +73,9 @@
         NSMutableArray *articless = [thearticleparser articless];
     }
     else {
-        NSLog(@"boo");
+        NSLog(@"Article Parsing Failed - Check Internet Connection");
         
     }
-    
-        
-    [self.tableView reloadData];
     
 }
 
@@ -93,6 +92,7 @@
     AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     return [app.articlelistArray count];
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -114,15 +114,24 @@
     
     //Set the text attribute to whatever we are currently looking at in our array    
     cell.textLabel.text = artList.ARTICLE_TITLE;
-    cell.detailTextLabel.text = artList.ARTICLE_DATE;
+    cell.detailTextLabel.text = artList.ARTICLE_PAGE;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.textLabel.font = [UIFont fontWithName:@"Optima-Bold" size:17];
-    cell.detailTextLabel.font = [UIFont fontWithName:@"Optima-Bold" size:10];
-    cell.textLabel.numberOfLines = 2;
+    cell.detailTextLabel.font = [UIFont fontWithName:@"Optima-Bold" size:11];
+    cell.textLabel.numberOfLines = 0;
     
     
     //Return the cell
     return cell;
+    
+    [self.tableView reloadData];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CGSize size = [[articlelistArray objectAtIndex:indexPath.row]
+                   sizeWithFont:[UIFont fontWithName:@"Optima-Bold" size:17]
+                   constrainedToSize:CGSizeMake(300, CGFLOAT_MAX)];
+    return size.height + 65;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -140,6 +149,7 @@
     [self.navigationController pushViewController:NDVC animated:YES];
     
 }
+
 
 
 

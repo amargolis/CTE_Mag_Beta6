@@ -10,4 +10,6 @@
 
 @interface FirstViewController : UIViewController
 
+@property(nonatomic, readonly, retain) UIStoryboard *storyboard;
+
 @end

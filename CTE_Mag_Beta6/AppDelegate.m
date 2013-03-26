@@ -10,7 +10,7 @@
 
 #import "FirstViewController.h"
 
-#import "SecondViewController.h"
+#import "AboutNavController.h"
 
 #import "NavigationViewController.h"
 
@@ -24,6 +24,8 @@
 @synthesize articlelistArray;
 @synthesize headlineslistArray;
 
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     articleParser *thearticleparser = [[articleParser alloc] initarticleParser];
@@ -31,24 +33,33 @@
     
     headlineParser *theheadlineparser = [[headlineParser alloc] initheadlineParser];
     
-    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
+    UIImage *navBarImage = [UIImage imageNamed:@"nav-bar.png"];
     
-    // Override point for customization after application launch.
-    UIViewController *viewController1 = [[FirstViewController alloc] initWithNibName:@"FirstViewController" bundle:nil];
-    UIViewController *viewController2 = [[SecondViewController alloc] initWithNibName:@"SecondViewController" bundle:nil];
+    [[UINavigationBar appearance] setBackgroundImage:navBarImage
+                                       forBarMetrics:UIBarMetricsDefault];
+    
+    // Override point for customization after application launch
+    
+    //UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+
+    UIViewController *viewController = [[FirstViewController alloc] initWithNibName:@"FirstViewController" bundle:nil];
+    //UIViewController *viewController2 = [[SecondViewController alloc] initWithNibName:@"SecondViewController" bundle:nil];
     
     //Create NavigationViewController object
     NavigationViewController *navController = [[NavigationViewController alloc] initWithNibName:@"NavigationViewController" bundle:nil];
     SecondNavigationViewController *secondnavController = [[SecondNavigationViewController alloc] initWithNibName:@"SecondNavigationViewController" bundle:nil];
+    AboutNavController *aboutnavController = [[AboutNavController alloc] initWithNibName:@"AboutNavController" bundle:nil];
+    
     
     //Create UINavigation Controller
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:navController];
     UINavigationController *secondnav = [[UINavigationController alloc] initWithRootViewController:secondnavController];
+    UINavigationController *aboutnav = [[UINavigationController alloc] initWithRootViewController:aboutnavController];
     
     self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = @[nav, secondnav, viewController1, viewController2];
+    self.tabBarController.viewControllers = @[nav, secondnav, viewController, aboutnav];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     return YES;

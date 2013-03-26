@@ -48,11 +48,12 @@
 {
     [super viewDidLoad];
     
-    self.tableView.rowHeight = 50;
+    UIImage *image = [UIImage imageNamed:@"CTEvector.png"];
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:image];
     
     self.navigationController.navigationBar.barStyle=UIBarStyleBlack;
     
-    NSURL *url = [[NSURL alloc] initWithString:@"http://nst.us.to/AppSupport/headlines.xml"];
+    NSURL *url = [[NSURL alloc] initWithString:@"http://www.testserver.com/xml"];
     
     NSData *data = [[NSData alloc] initWithContentsOfURL:url];
     
@@ -73,10 +74,9 @@
         NSMutableArray *headliness = [theheadlineparser headliness];
     }
     else {
-        NSLog(@"boo");
+        NSLog(@"Headline Parsing Failed - Check Internet Connection");
         
     }
-    
     
     [self.tableView reloadData];
     
@@ -106,7 +106,7 @@
     
     //If there are no cells to be reused, create a new cell
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
@@ -115,12 +115,21 @@
     
     //Set the text attribute to whatever we are currently looking at in our array
     cell.textLabel.text = headList.content;
+    cell.detailTextLabel.text = headList.dateadded;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.textLabel.font = [UIFont fontWithName:@"Optima-Bold" size:17];
-    cell.textLabel.numberOfLines = 2;
+    cell.detailTextLabel.font = [UIFont fontWithName:@"Optima-Bold" size:10];
+    cell.textLabel.numberOfLines = 0;
     
     //Return the cell
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CGSize size = [[headlineslistArray objectAtIndex:indexPath.row]
+                   sizeWithFont:[UIFont fontWithName:@"Optima-Bold" size:17]
+                   constrainedToSize:CGSizeMake(300, CGFLOAT_MAX)];
+    return size.height + 65;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

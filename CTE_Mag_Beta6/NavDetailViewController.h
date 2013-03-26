@@ -8,20 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "ArticleList.h"
-@interface NavDetailViewController : UIViewController{
+@interface NavDetailViewController : UIViewController <UIScrollViewDelegate>
     
-    
-   
-    //link xml elements to labels in NavDetailViewController
-    IBOutlet UILabel *ARTICLE_TITLE;
-    IBOutlet UILabel *ARTICLE_AUTHOR;
-    IBOutlet UILabel *ARTICLE_DATE;
-    IBOutlet UILabel *ARTICLE_PAGE;
-    IBOutlet UILabel *ARTICLE_DESCRIPTION;
-    IBOutlet UILabel *STATIC_WEBPAGE;
-    IBOutlet UILabel *ARTICLE_ID;
-}
-
+@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, retain) ArticleList *artList;
 
 - (IBAction)presentWebViewController;
